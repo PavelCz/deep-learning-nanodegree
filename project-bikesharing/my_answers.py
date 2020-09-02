@@ -59,13 +59,14 @@ class NeuralNetwork(object):
             X: features batch
 
         '''
+        X = np.array(X)
         #### Implement the forward pass here ####
         ### Forward pass ###
-        hidden_inputs = np.dot(X, self.weights_input_to_hidden)  # signals into hidden layer
+        hidden_inputs = X @ self.weights_input_to_hidden  # signals into hidden layer
         # signals from hidden layer
         hidden_outputs = self.activation_function(hidden_inputs)
 
-        final_inputs = np.dot(hidden_outputs, self.weights_hidden_to_output)  # signals into final output layer
+        final_inputs = hidden_outputs @ self.weights_hidden_to_output  # signals into final output layer
         final_outputs = final_inputs  # signals from final output layer
 
         return final_outputs, hidden_outputs.reshape(hidden_outputs.shape[0], -1)
@@ -88,7 +89,8 @@ class NeuralNetwork(object):
         error = y - final_outputs  # Output layer error is the difference between desired target and actual output.
 
         # In this case the activation is sigmoid, so derivative is the following
-        hidden_error = error * self.weights_hidden_to_output
+        # For higher dimensional outputs we need matrix mult here
+        hidden_error = self.weights_hidden_to_output @ error[:, None]
         # We have identity activation in last layer, therefore gradient is 1
         output_error_term = error
 
@@ -145,3 +147,10 @@ iterations = 4000
 learning_rate = 0.4
 hidden_nodes = 35
 output_nodes = 1
+
+network = NeuralNetwork(3, 2, 2, 0.5)
+
+inputs = np.array([[0.5, -0.2, 0.1]])
+targets = np.array([[0.4, 0.4]])
+
+network.train(inputs, targets)
