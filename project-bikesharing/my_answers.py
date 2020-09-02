@@ -68,7 +68,7 @@ class NeuralNetwork(object):
         final_inputs = np.dot(hidden_outputs, self.weights_hidden_to_output)  # signals into final output layer
         final_outputs = final_inputs  # signals from final output layer
 
-        return final_outputs, hidden_outputs
+        return final_outputs, hidden_outputs.reshape(hidden_outputs.shape[0], -1)
 
     def backpropagation(self, final_outputs, hidden_outputs, X, y, delta_weights_i_h, delta_weights_h_o):
         ''' Implement backpropagation
@@ -86,19 +86,18 @@ class NeuralNetwork(object):
 
         # Not sure what error to use here, so using absolute error
         error = y - final_outputs  # Output layer error is the difference between desired target and actual output.
-        print(hidden_outputs.shape)
+
         # In this case the activation is sigmoid, so derivative is the following
         hidden_error = error * self.weights_hidden_to_output
-
         # We have identity activation in last layer, therefore gradient is 1
         output_error_term = error
 
-        hidden_error_term = np.dot(hidden_outputs * (1 - hidden_outputs), hidden_error)
+        hidden_error_term = hidden_outputs * (1 - hidden_outputs) * hidden_error
 
         # Weight step (input to hidden)
-        delta_weights_i_h += hidden_error_term * X[:, None]
+        delta_weights_i_h += X[:, None] @ hidden_error_term.T
         # Weight step (hidden to output)
-        delta_weights_h_o += output_error_term * hidden_outputs.reshape(hidden_outputs.shape[0], -1)
+        delta_weights_h_o += output_error_term * hidden_outputs
         return delta_weights_i_h, delta_weights_h_o
 
     def update_weights(self, delta_weights_i_h, delta_weights_h_o, n_records):
