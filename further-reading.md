@@ -1,6 +1,6 @@
 # Further reading
 
-## 2.
+## 2. Neural Networks
 
 ### 2.2. Implementing Gradient Descent
 
