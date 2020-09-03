@@ -5,3 +5,4 @@ project-bikesharing/.udacity-pa/__pycache__
 *.json
 project-dog-classification/dogImages
 project-dog-classification/lfw
+project-dog-classification/.ipynb_checkpoints
