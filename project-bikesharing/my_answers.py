@@ -147,10 +147,3 @@ iterations = 4000
 learning_rate = 0.4
 hidden_nodes = 35
 output_nodes = 1
-
-network = NeuralNetwork(3, 2, 2, 0.5)
-
-inputs = np.array([[0.5, -0.2, 0.1]])
-targets = np.array([[0.4, 0.4]])
-
-network.train(inputs, targets)
