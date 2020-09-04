@@ -8,3 +8,5 @@ project-dog-classification/lfw
 project-dog-classification/.ipynb_checkpoints
 
 .idea/
+
+*.pt
