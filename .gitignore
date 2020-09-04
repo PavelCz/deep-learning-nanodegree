@@ -10,3 +10,5 @@ project-dog-classification/.ipynb_checkpoints
 .idea/
 
 *.pt
+
+transfer-learning/.ipynb_checkpoints/
