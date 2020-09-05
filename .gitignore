@@ -161,3 +161,5 @@ cython_debug/
 project-tv-script-generation/preprocess.p
 
 word2vec-embeddings/data/text8
+
+project-dog-classification/dog_app.html
