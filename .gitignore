@@ -170,3 +170,5 @@ project-tv-script-generation/dlnd_tv_script_generation.html
 gan-mnist/data/MNIST/raw/
 
 *.pkl
+
+*.mat
