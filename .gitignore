@@ -172,3 +172,5 @@ gan-mnist/data/MNIST/raw/
 *.pkl
 
 *.mat
+
+weight-initialization/data/
