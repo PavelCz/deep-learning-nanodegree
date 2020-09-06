@@ -174,3 +174,5 @@ gan-mnist/data/MNIST/raw/
 *.mat
 
 weight-initialization/data/
+
+project-face-generation/dlnd_face_generation.html
