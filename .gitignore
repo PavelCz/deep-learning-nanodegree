@@ -176,3 +176,7 @@ gan-mnist/data/MNIST/raw/
 weight-initialization/data/
 
 project-face-generation/dlnd_face_generation.html
+
+project-sagemaker-deployment/SageMaker Project.html
+
+sagemaker/
