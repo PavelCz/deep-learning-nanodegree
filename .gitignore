@@ -12,7 +12,7 @@ project-dog-classification/.ipynb_checkpoints
 
 *.pt
 
-transfer-learning/.ipynb_checkpoints/
+exercises/transfer-learning/.ipynb_checkpoints/
 
 project-dog-classification/my_test_images/
 
@@ -161,19 +161,19 @@ cython_debug/
 
 project-tv-script-generation/preprocess.p
 
-word2vec-embeddings/data/text8
+exercises/word2vec-embeddings/data/text8
 
 project-dog-classification/dog_app.html
 
 project-tv-script-generation/dlnd_tv_script_generation.html
 
-gan-mnist/data/MNIST/raw/
+exercises/gan-mnist/data/MNIST/raw/
 
 *.pkl
 
 *.mat
 
-weight-initialization/data/
+exercises/weight-initialization/data/
 
 project-face-generation/dlnd_face_generation.html
 
